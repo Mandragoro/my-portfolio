@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import img from '../img/cabana-both-op.png';
+import img from '../img/cabana-both-op2.png';
 import img2 from '../img/rando-both-op.png';
-import img3 from '../img/dorpau-both-op.png';
+import img3 from '../img/dorpau-both-op2.png';
 import img4 from '../img/materialator-op.png';
 
 const useStyles = makeStyles((theme) => ({

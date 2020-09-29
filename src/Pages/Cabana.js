@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1000,
     margin: 'auto',
     marginTop: 150,
+    padding: 50,
   },
   title: {
     color: 'rgb(255 255 255 / 0.6)',

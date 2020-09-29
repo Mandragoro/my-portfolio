@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: 200,
-  }
+  },
+  subTitle: {
+    fontWeight: 200,
+  },
 }));
 
 export default function ContainedButtons() {
@@ -39,7 +42,7 @@ export default function ContainedButtons() {
         <Typography component="h2" variant="h2" className={classes.title}>
           Abraham Trujillo
         </Typography>
-        <Typography component="h3" variant="h5">
+        <Typography component="h3" variant="h5" className={classes.subTitle}>
           Front-end developer
         </Typography>
       </header>

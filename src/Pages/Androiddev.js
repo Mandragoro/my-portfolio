@@ -169,7 +169,7 @@ export default function Androiddev() {
 
             <Grid item xs={12} md={5} className={classes.gridItem}>
               <div className={classes.imgContainer}>
-                <img src={img} alt="psicron app" />
+                <img src={img} alt="Hboard app" />
               </div>
             </Grid>
 

@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     right: 0,
-    // background: "#303030",
   },
   linksContainer: {
     display: 'flex',
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   links: {
-    margin: '0px 5px 0px 5px',
+    margin: '0px 4px 0px 4px',
   },
 }));
 

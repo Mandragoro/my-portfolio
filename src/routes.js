@@ -16,13 +16,13 @@ const routes = [
   },
   {
     path: "/webdev",
-    name: 'Webdev',
+    name: 'Web dev',
     sidebar: () => <div>webdev!</div>,
     main: () => <Webdev />
   },
   {
     path: "/androiddev",
-    name: 'Androiddev',
+    name: 'Android dev',
     sidebar: () => <div>androiddev!</div>,
     main: () => <Androiddev />
   },
