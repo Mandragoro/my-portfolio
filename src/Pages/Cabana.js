@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +26,25 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: 80,
   },
+  buttonContainer: {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+  },
+  button: {
+    color: '#ffffff',
+    border: '1px solid rgb(255 255 255 / 50%)',
+  },
 }));
 
 export default function IconButtons() {
+
+  const openLink = () => {
+    window.open("https://mandragoro.xyz", 'La Cabaña', 'left=20,top=20,width=412,height=800,toolbar=0,resizable=1,rel="noopener"'); 
+    return false;
+  }
 
   const classes = useStyles();
 
@@ -44,9 +61,29 @@ export default function IconButtons() {
         "La cabaña" is a mini market & restaurant delivery PWA, the customer can browse and purcahse all items available in the physical store, when the order is ready, it is delivered to the customer's address.
       </Typography>
 
+      <br />
+
       <Typography component="p" variant="body1" className={classes.body1} color="textSecondary" gutterBottom>
         The complete system has different parts, the client, CMS, database and server. Everything resides inside some docker containers hosted on a VPS running linux. The server uses Nginx to serve static conntent and as a reverse proxy to manage incomming connections, all incoming/outgoing connections are encrypted with ssl and has location based bans for countries that are not in the list.
       </Typography>
+
+      <br />
+
+      <Typography component="p" variant="body1" className={classes.body1} color="textSecondary" gutterBottom>
+         Try the client but make your windows smaller!
+      </Typography>
+
+      <div className={classes.buttonContainer}>
+        <Button 
+          rel="noopener" 
+          color={"secondary"} 
+          variant={"outlined"} 
+          className={classes.button} 
+          onClick={openLink} 
+        >
+          Go to cabana
+        </Button>
+      </div>
 
       <Separator />
 
