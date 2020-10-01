@@ -74,14 +74,20 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 8,
     marginBottom: 24,
   },
-  seeMoreButton: {
-
+  button: {
+    margin: "0px 12px 0 12px",
   },
 }));
 
 const LinkRouter = (props) => <Button color={"secondary"} variant={"outlined"} {...props} component={Link} />;
 
+const openLink = () => {
+  window.open("https://mandragoro.xyz", 'La Cabaña', 'left=20,top=20,width=412,height=800,toolbar=0,resizable=1,rel="noopener"'); 
+  return false;
+}
+
 export default function Webdev() {
+
   const classes = useStyles();
 
   return (
@@ -105,9 +111,20 @@ export default function Webdev() {
                 <Typography component="p" variant="body1" className={classes.desc} gutterBottom>
                   (Beta) "La cabaña" is a mini market & restaurant delivery PWA, the customer can browse and purcahse all items available in the physical store, when the order is ready, it is delivered to the customer's address.
                 </Typography>
-                <LinkRouter to={"/cabana"}>
-                  More Details
-                </LinkRouter>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/cabana"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                  <Button 
+                    rel="noopener" 
+                    color={"secondary"} 
+                    variant={"outlined"} 
+                    className={classes.button} 
+                    onClick={openLink} 
+                  >
+                    Live Demo
+                  </Button>
+                </div>
               </div>
             </Grid>
 
@@ -125,9 +142,21 @@ export default function Webdev() {
                 <Typography component="p" variant="body1" className={classes.desc}>
                   Random Classmate is a basic and simple PWA. It's only purpose is to randomize classmate names of a group, useful when teaching kids online.
                 </Typography>
-                <LinkRouter to={"/random-classmate"}>
-                  More Details
-                </LinkRouter>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/random-classmate"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                  <Button 
+                    target="_blank"
+                    rel="noopener" 
+                    color={"secondary"} 
+                    variant={"outlined"} 
+                    className={classes.button} 
+                    href={"https://dreamy-saha-9a821c.netlify.app/"} 
+                  >
+                    Live Demo
+                  </Button>
+                </div>
               </div>
             </Grid>
 
@@ -145,9 +174,21 @@ export default function Webdev() {
                 <Typography component="p" variant="body1" className={classes.desc}>
                   (Under construction) SSR Website that filters potential real state customers according to their budget. It calculates rates for 1 person or a group of people, making it easier for groups of people to invest.
                 </Typography>
-                <LinkRouter to={"/dorpau"}>
-                  More Details
-                </LinkRouter>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/dorpau"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                  <Button 
+                    target="_blank"
+                    rel="noopener" 
+                    color={"secondary"} 
+                    variant={"outlined"} 
+                    className={classes.button} 
+                    href={"https://jovial-cori-a87263.netlify.app/"} 
+                  >
+                    Live Demo
+                  </Button>
+                </div>
               </div>
             </Grid>
 

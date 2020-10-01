@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: 'rgb(255 255 255 / 0.6)',
+    marginBottom: 48,
   },
   title2: {
     color: 'rgb(255 255 255 / 0.6)',
@@ -82,7 +83,7 @@ export default function IconButtons() {
           className={classes.button} 
           onClick={openLink} 
         >
-          Go to cabana
+          Live Demo
         </Button>
       </div>
 

@@ -4,6 +4,9 @@ import About from './Pages/About.js';
 import Webdev from './Pages/Webdev.js';
 import Androiddev from './Pages/Androiddev.js';
 import Cabana from './Pages/Cabana.js';
+import RandomClassMate from './Pages/RandomClassMate.js';
+import Dorpau from './Pages/Dorpau.js';
+import Materialator from './Pages/Materialator.js';
 import NotFound from './Pages/NotFound.js';
 
 const routes = [
@@ -37,6 +40,24 @@ const routes = [
     name: 'Cabana',
     sidebar: () => <div>Cabana!</div>,
     main: () => <Cabana />
+  },
+  {
+    path: "/random-classmate",
+    name: 'Random Classmate',
+    sidebar: () => <div>Random Classmate!</div>,
+    main: () => <RandomClassMate />
+  },
+  {
+    path: "/dorpau",
+    name: 'Dorpau',
+    sidebar: () => <div>Dorpau!</div>,
+    main: () => <Dorpau />
+  },
+  {
+    path: "/materialator",
+    name: 'Materialator',
+    sidebar: () => <div>Materialator!</div>,
+    main: () => <Materialator />
   },
   {
     path: "",
