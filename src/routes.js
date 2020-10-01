@@ -3,11 +3,15 @@ import Home from './Pages/Home.js';
 import About from './Pages/About.js';
 import Webdev from './Pages/Webdev.js';
 import Androiddev from './Pages/Androiddev.js';
+import NotFound from './Pages/NotFound.js';
 import Cabana from './Pages/Cabana.js';
 import RandomClassMate from './Pages/RandomClassMate.js';
 import Dorpau from './Pages/Dorpau.js';
 import Materialator from './Pages/Materialator.js';
-import NotFound from './Pages/NotFound.js';
+import Kodama from './Pages/Kodama.js';
+import Navi from './Pages/Navi.js';
+import Psicron from './Pages/Psicron.js';
+import Hboard from './Pages/Hboard.js';
 
 const routes = [
   {
@@ -58,6 +62,30 @@ const routes = [
     name: 'Materialator',
     sidebar: () => <div>Materialator!</div>,
     main: () => <Materialator />
+  },
+  {
+    path: "/kodama",
+    name: 'Kodama',
+    sidebar: () => <div>Kodama!</div>,
+    main: () => <Kodama />
+  },
+  {
+    path: "/navi",
+    name: 'Navi',
+    sidebar: () => <div>Navi!</div>,
+    main: () => <Navi />
+  },
+  {
+    path: "/psicron",
+    name: 'Psicron',
+    sidebar: () => <div>Psicron!</div>,
+    main: () => <Psicron />
+  },
+  {
+    path: "/hboard",
+    name: 'Hboard',
+    sidebar: () => <div>Hboard!</div>,
+    main: () => <Hboard />
   },
   {
     path: "",

@@ -4,9 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import vid from '../img/Kodamalwp-op.mp4';
-import vid2 from '../img/Navi-op.mp4';
+import vid2 from '../img/navi-op2.mp4';
 import vid3 from '../img/Psicron-op2.mp4';
 import img from '../img/hboard-op.jpg';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,8 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      borderRadius: 4,
+      boxShadow: theme.shadows[3],
     },
   },
   vidContainer: {
@@ -67,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      borderRadius: 4,
+      boxShadow: theme.shadows[3],
     }
   },
   descContainer: {
@@ -86,10 +91,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 8,
     marginBottom: 24,
   },
-  seeMoreButton: {
-
+  button: {
+    margin: "0px 12px 0 12px",
   },
 }));
+
+const LinkRouter = (props) => <Button color={"secondary"} variant={"outlined"} {...props} component={Link} />;
 
 export default function Androiddev() {
   const classes = useStyles();
@@ -117,14 +124,16 @@ export default function Androiddev() {
                 <Typography component="p" variant="body1" className={classes.desc} gutterBottom>
                   (Under development) Kodama LWP is a live wallpaper for Android. It features little forest spirits that apear and desapear as you try to interact with them. Those spirits can make you nostalgic about certaint movie.
                 </Typography>
-                <Button variant="outlined" color="secondary" className={classes.seeMoreButton}>
-                  More Details
-                </Button>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/kodama"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                </div>
               </div>
             </Grid>
 
             <Grid item xs={12} md={5} className={classes.gridItem}>
-              <div className={classes.vidContainer} style={{maxWidth: '45%'}}>
+              <div className={classes.vidContainer}>
                 <video controls={false} autoPlay loop>
                   <source src={vid2} type="video/mp4" />
                 </video>
@@ -139,9 +148,11 @@ export default function Androiddev() {
                 <Typography component="p" variant="body1" className={classes.desc}>
                   (Retired from store) Live wallpaper for Android featuring Navi the fairy, she flies around following you and warns you when your battery is low. She also has the power to make you nostalgic about a certain game.
                 </Typography>
-                <Button variant="outlined" color="secondary" className={classes.seeMoreButton}>
-                  More Details
-                </Button>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/navi"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                </div>
               </div>
             </Grid>
 
@@ -161,9 +172,11 @@ export default function Androiddev() {
                 <Typography component="p" variant="body1" className={classes.desc}>
                   Psicron is a platform game/exam for children, designed to test emotional wellness in children with cancer. It has 64 levels with one question at the end of each level, when the kid finishes the game, a table with all the results is calculated showing you the score accodring to some specific values made by a Psicologyst.
                 </Typography>
-                <Button variant="outlined" color="secondary" className={classes.seeMoreButton}>
-                  More Details
-                </Button>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/psicron"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                </div>
               </div>
             </Grid>
 
@@ -181,9 +194,11 @@ export default function Androiddev() {
                 <Typography component="p" variant="body1" className={classes.desc}>
                   H-board is a tool that helps children with cerebral palsy communicate with their parents. H-board consists of an Android application and custom hardware that uses kid's guttural sounds to select and activate pictograms that speak for them, making it a little bit easier to understand their basic needs.
                 </Typography>
-                <Button variant="outlined" color="secondary" className={classes.seeMoreButton}>
-                  More Details
-                </Button>
+                <div className={classes.buttonContainer}>
+                  <LinkRouter to={"/hboard"} className={classes.button}>
+                    More Details
+                  </LinkRouter>
+                </div>
               </div>
             </Grid>
 
