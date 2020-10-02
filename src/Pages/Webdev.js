@@ -5,10 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
-import img from '../img/cabana-both-op3.png';
-import img2 from '../img/rando-both-op2.png';
-import img3 from '../img/dorpau-both-op3.png';
-import img4 from '../img/materialator-op2.png';
+import cabana from '../img/cabana-both-op3.png';
+import randomClassmate from '../img/rando-both-op2.png';
+import dorpau from '../img/dorpau-both-op3.png';
+import materialator from '../img/materialator-op2.png';
+import {useLazyLoadImage} from '../Components/LazyLoad.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,11 +53,16 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     maxWidth: 450,
     margin: 'auto',
+    minHeight: 244,
     maxHeight: 244,
+    position: 'relative',
     '& img': {
       width: '100%',
       height: '100%',
       objectFit: 'contain',
+      position: 'absolute',
+      top: 0,
+      left: 0,
     }
   },
   descContainer: {
@@ -101,7 +107,7 @@ export default function Webdev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.imgContainer}>
-                  <img src={img} alt="supermarket app" />
+                  {useLazyLoadImage(cabana)}
                 </div>
               </Grid>
 
@@ -136,7 +142,7 @@ export default function Webdev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.imgContainer}>
-                  <img src={img2} alt="Random Classmate app" />
+                  {useLazyLoadImage(randomClassmate)}
                 </div>
               </Grid>
 
@@ -172,7 +178,7 @@ export default function Webdev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.imgContainer}>
-                  <img src={img3} alt="Dorpau website" />
+                  {useLazyLoadImage(dorpau)}
                 </div>
               </Grid>
 
@@ -208,7 +214,7 @@ export default function Webdev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.imgContainer}>
-                  <img src={img4} alt="Materialator app" />
+                  {useLazyLoadImage(materialator)}
                 </div>
               </Grid>
 

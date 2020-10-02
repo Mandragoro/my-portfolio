@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     // background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
     // background: 'linear-gradient(-45deg, #ee7752, #7b68ee, #23a6d5, #23d5ab)',
     background: 'linear-gradient(-45deg, rgba(169,115,255,1) 0%, rgba(109,87,255,1) 30%, rgba(24,144,179,1) 54%, rgba(4,164,184,1) 67%, rgba(0,255,171,1) 100%)',
+    backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '300% 300%',
     minHeight: '100vh',

@@ -4,11 +4,12 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
-import vid from '../img/Kodamalwp-op.mp4';
-import vid2 from '../img/navi-op2.mp4';
-import vid3 from '../img/Psicron-op2.mp4';
-import img from '../img/hboard-op.jpg';
+import kodamaVid from '../img/Kodamalwp-op.mp4';
+import naviVid from '../img/navi-op2.mp4';
+import psicronVid from '../img/Psicron-op2.mp4';
+import hboardImg from '../img/hboard-op.jpg';
 import { Link } from "react-router-dom";
+import {useLazyLoadVideo, useLazyLoadImage} from '../Components/LazyLoad.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,13 +53,19 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     maxWidth: 450,
     margin: 'auto',
+    minHeight: 244,
     maxHeight: 244,
+    position: 'relative',
     '& img': {
       width: '100%',
       height: '100%',
       objectFit: 'unset',
       borderRadius: 4,
       boxShadow: theme.shadows[3],
+      // objectFit: 'contain',
+      position: 'absolute',
+      top: 0,
+      left: 0,
     },
   },
   vidContainer: {
@@ -68,7 +75,9 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     maxWidth: 450,
     margin: 'auto',
+    minHeight: 244,
     maxHeight: 244,
+    position: 'relative',
     '& video': {
       width: '100%',
       height: '100%',
@@ -113,9 +122,7 @@ export default function Androiddev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.vidContainer}>
-                  <video controls={false} autoPlay loop>
-                    <source src={vid} type="video/mp4" />
-                  </video>
+                  {useLazyLoadVideo(kodamaVid)}
                 </div>
               </Grid>
 
@@ -141,9 +148,7 @@ export default function Androiddev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.vidContainer}>
-                  <video controls={false} autoPlay loop>
-                    <source src={vid2} type="video/mp4" />
-                  </video>
+                {useLazyLoadVideo(naviVid)}
                 </div>
               </Grid>
 
@@ -169,9 +174,7 @@ export default function Androiddev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.vidContainer}>
-                  <video controls={false} autoPlay loop>
-                    <source src={vid3} type="video/mp4" />
-                  </video>
+                  {useLazyLoadVideo(psicronVid)}
                 </div>
               </Grid>
 
@@ -197,7 +200,8 @@ export default function Androiddev() {
             <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
               <Grid item xs={12} md={5} className={classes.gridItem}>
                 <div className={classes.imgContainer}>
-                  <img src={img} alt="Hboard app" />
+                  {/* <img src={hboardImg} alt="Hboard app" /> */}
+                  {useLazyLoadImage(hboardImg, {width:'100%'}, {backgroundSize: 'cover'})}
                 </div>
               </Grid>
 
