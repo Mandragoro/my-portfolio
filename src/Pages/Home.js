@@ -1,25 +1,19 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-// import logo from '../logo.svg';
-// import RouterBreadcrumbs from '../Components/RouterBreadcrumbs.js';
+import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // '& > *': {
-    //   margin: theme.spacing(1),
-    // },
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
   header: {
-    // backgroundColor: '#282c34',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    // fontSize: 'calc(10px + 2vmin)',
     color: 'white',
     minHeight: 'calc(100vh)',
   },
@@ -36,9 +30,8 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root}>
-      {/* <RouterBreadcrumbs /> */}
+      <Fade in={true} timeout={800}>
       <header className={classes.header}>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Typography component="h2" variant="h2" className={classes.title}>
           Abraham Trujillo
         </Typography>
@@ -46,6 +39,7 @@ export default function ContainedButtons() {
           Front-end developer
         </Typography>
       </header>
+      </Fade>
     </div>
   );
 }

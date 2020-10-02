@@ -3,11 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
-import img from '../img/cabana-both-op2.png';
-import img2 from '../img/rando-both-op.png';
-import img3 from '../img/dorpau-both-op2.png';
-import img4 from '../img/materialator-op.png';
+import img from '../img/cabana-both-op3.png';
+import img2 from '../img/rando-both-op2.png';
+import img3 from '../img/dorpau-both-op3.png';
+import img4 from '../img/materialator-op2.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,10 +52,11 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     maxWidth: 450,
     margin: 'auto',
+    maxHeight: 244,
     '& img': {
       width: '100%',
       height: '100%',
-      objectFit: 'cover',
+      objectFit: 'contain',
     }
   },
   descContainer: {
@@ -70,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   desc: {
-    color: "#fff",
+    color: "rgb(255 255 255 / 80%)",
     marginTop: 8,
     marginBottom: 24,
   },
@@ -95,124 +97,136 @@ export default function Webdev() {
       <div className={classes.content}>
         <div className={classes.gridContainer}>
 
-          <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+          <Fade in={true} timeout={800}>
+            <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+              <Grid item xs={12} md={5} className={classes.gridItem}>
+                <div className={classes.imgContainer}>
+                  <img src={img} alt="supermarket app" />
+                </div>
+              </Grid>
 
-            <Grid item xs={12} md={5} className={classes.gridItem}>
-              <div className={classes.imgContainer}>
-                <img src={img} alt="supermarket app" />
-              </div>
+              <Grid item xs={12} md={5} className={classes.gridItemText}>
+                <div className={classes.descContainer}>
+                  <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
+                    La Cabaña
+                  </Typography>
+                  <Typography component="p" variant="body1" className={classes.desc} gutterBottom>
+                    (Beta) "La cabaña" is a mini market & restaurant delivery PWA, the customer can browse and purcahse all items available in the physical store, when the order is ready, it is delivered to the customer's address.
+                  </Typography>
+                  <div className={classes.buttonContainer}>
+                    <LinkRouter to={"/cabana"} className={classes.button}>
+                      More Details
+                    </LinkRouter>
+                    <Button 
+                      rel="noopener" 
+                      color={"secondary"} 
+                      variant={"outlined"} 
+                      className={classes.button} 
+                      onClick={openLink} 
+                    >
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
             </Grid>
+          </Fade>
 
-            <Grid item xs={12} md={5} className={classes.gridItemText}>
-              <div className={classes.descContainer}>
-                <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
-                  La Cabaña
-                </Typography>
-                <Typography component="p" variant="body1" className={classes.desc} gutterBottom>
-                  (Beta) "La cabaña" is a mini market & restaurant delivery PWA, the customer can browse and purcahse all items available in the physical store, when the order is ready, it is delivered to the customer's address.
-                </Typography>
-                <div className={classes.buttonContainer}>
-                  <LinkRouter to={"/cabana"} className={classes.button}>
+          <Fade in={true} timeout={{enter:1600}}>
+            <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+              <Grid item xs={12} md={5} className={classes.gridItem}>
+                <div className={classes.imgContainer}>
+                  <img src={img2} alt="Random Classmate app" />
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={5} className={classes.gridItemText}>
+                <div className={classes.descContainer}>
+                  <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
+                    Random Classmate
+                  </Typography>
+                  <Typography component="p" variant="body1" className={classes.desc}>
+                    Random Classmate is a basic and simple PWA. It's only purpose is to randomize classmate names of a group, useful when teaching kids online.
+                  </Typography>
+                  <div className={classes.buttonContainer}>
+                    <LinkRouter to={"/random-classmate"} className={classes.button}>
+                      More Details
+                    </LinkRouter>
+                    <Button 
+                      target="_blank"
+                      rel="noopener" 
+                      color={"secondary"} 
+                      variant={"outlined"} 
+                      className={classes.button} 
+                      href={"https://dreamy-saha-9a821c.netlify.app/"} 
+                    >
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Fade>
+
+          <Fade in={true} timeout={{enter:2400}}>
+            <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+              <Grid item xs={12} md={5} className={classes.gridItem}>
+                <div className={classes.imgContainer}>
+                  <img src={img3} alt="Dorpau website" />
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={5} className={classes.gridItemText}>
+                <div className={classes.descContainer}>
+                  <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
+                    Dorpau
+                  </Typography>
+                  <Typography component="p" variant="body1" className={classes.desc}>
+                    (Under construction) SSR Website that filters potential real state customers according to their budget. It calculates rates for 1 person or a group of people, making it easier for groups of people to invest.
+                  </Typography>
+                  <div className={classes.buttonContainer}>
+                    <LinkRouter to={"/dorpau"} className={classes.button}>
+                      More Details
+                    </LinkRouter>
+                    <Button 
+                      target="_blank"
+                      rel="noopener" 
+                      color={"secondary"} 
+                      variant={"outlined"} 
+                      className={classes.button} 
+                      href={"https://jovial-cori-a87263.netlify.app/"} 
+                    >
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Fade>
+
+          <Fade in={true} timeout={{enter:3200}}>
+            <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+              <Grid item xs={12} md={5} className={classes.gridItem}>
+                <div className={classes.imgContainer}>
+                  <img src={img4} alt="Materialator app" />
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={5} className={classes.gridItemText}>
+                <div className={classes.descContainer}>
+                  <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
+                    Materialator
+                  </Typography>
+                  <Typography component="p" variant="body1" className={classes.desc}>
+                    (Only for localhost) This web app helps teachers create batch flashcards, print and cut them for later use with kids as a learning material. It's possible to create and save templates for later use.
+                  </Typography>
+                  <LinkRouter to={"/materialator"}>
                     More Details
                   </LinkRouter>
-                  <Button 
-                    rel="noopener" 
-                    color={"secondary"} 
-                    variant={"outlined"} 
-                    className={classes.button} 
-                    onClick={openLink} 
-                  >
-                    Live Demo
-                  </Button>
                 </div>
-              </div>
+              </Grid>
             </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItem}>
-              <div className={classes.imgContainer}>
-                <img src={img2} alt="Random Classmate app" />
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItemText}>
-              <div className={classes.descContainer}>
-                <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
-                  Random Classmate
-                </Typography>
-                <Typography component="p" variant="body1" className={classes.desc}>
-                  Random Classmate is a basic and simple PWA. It's only purpose is to randomize classmate names of a group, useful when teaching kids online.
-                </Typography>
-                <div className={classes.buttonContainer}>
-                  <LinkRouter to={"/random-classmate"} className={classes.button}>
-                    More Details
-                  </LinkRouter>
-                  <Button 
-                    target="_blank"
-                    rel="noopener" 
-                    color={"secondary"} 
-                    variant={"outlined"} 
-                    className={classes.button} 
-                    href={"https://dreamy-saha-9a821c.netlify.app/"} 
-                  >
-                    Live Demo
-                  </Button>
-                </div>
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItem}>
-              <div className={classes.imgContainer}>
-                <img src={img3} alt="Dorpau website" />
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItemText}>
-              <div className={classes.descContainer}>
-                <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
-                  Dorpau
-                </Typography>
-                <Typography component="p" variant="body1" className={classes.desc}>
-                  (Under construction) SSR Website that filters potential real state customers according to their budget. It calculates rates for 1 person or a group of people, making it easier for groups of people to invest.
-                </Typography>
-                <div className={classes.buttonContainer}>
-                  <LinkRouter to={"/dorpau"} className={classes.button}>
-                    More Details
-                  </LinkRouter>
-                  <Button 
-                    target="_blank"
-                    rel="noopener" 
-                    color={"secondary"} 
-                    variant={"outlined"} 
-                    className={classes.button} 
-                    href={"https://jovial-cori-a87263.netlify.app/"} 
-                  >
-                    Live Demo
-                  </Button>
-                </div>
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItem}>
-              <div className={classes.imgContainer}>
-                <img src={img4} alt="Materialator app" />
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={5} className={classes.gridItemText}>
-              <div className={classes.descContainer}>
-                <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
-                  Materialator
-                </Typography>
-                <Typography component="p" variant="body1" className={classes.desc}>
-                  (Only for localhost) This web app helps teachers create batch flashcards, print and cut them for later use with kids as a learning material. It's possible to create and save templates for later use.
-                </Typography>
-                <LinkRouter to={"/materialator"}>
-                  More Details
-                </LinkRouter>
-              </div>
-            </Grid>
-
-          </Grid>
+          </Fade>
 
         </div>
 

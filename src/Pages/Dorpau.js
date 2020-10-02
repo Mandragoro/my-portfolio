@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +49,8 @@ export default function IconButtons() {
   const Separator = () => (<div className={classes.separator}></div>);
 
   return (
-    <div className={classes.root}>
+    <Fade in={true} timeout={800}>
+      <div className={classes.root}>
 
       <Typography component="p" variant="h2" className={classes.title} color="textSecondary" gutterBottom>
         Dorpau
@@ -86,5 +88,6 @@ export default function IconButtons() {
       <Separator />
 
     </div>
+    </Fade>
   );
 }

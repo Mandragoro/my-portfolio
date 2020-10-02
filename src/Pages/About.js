@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Fade from '@material-ui/core/Fade';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   title: {
-    color: 'rgb(255 255 255 / 0.6)',
+    color: 'rgb(255 255 255 / 80%)',
   },
   title2: {
-    color: 'rgb(255 255 255 / 0.6)',
+    color: 'rgb(255 255 255 / 80%)',
     textAlign: 'left',
     fontWeight: '200',
   },
@@ -54,23 +55,25 @@ export default function About() {
   return (
     <div className={classes.root}>
       <div className={classes.gridContainer}>
-        <Grid container spacing={3} direction="row" justify="center" alignItems="stretch">
-          <Grid item xs={9} sm={6} md={6}>
-            <div className={classes.imgContainer2} />
-          </Grid>
-          <Grid item xs={12} sm={12} md={6}>
-          <div className={classes.textContainer}>
-            <Typography component="p" variant="h4" className={classes.title2} color="textSecondary" gutterBottom>
-              I'm Abraham and I have a Bachelor of Science in Electronics Engineering. I mainly focus on software because is what I like the most and I consider myself a fullstack developer but I really like UX/UI. 
-            </Typography>
-            <Typography component="p" variant="h4" className={classes.title2} color="textSecondary" gutterBottom>
-              The current stack that I like is Postgresql, Express.js, React.js, Node.js.
-            </Typography>
-            <div className={classes.imgContainer}>
+        <Fade in={true} timeout={800}>
+          <Grid container spacing={3} direction="row" justify="center" alignItems="stretch">
+            <Grid item xs={9} sm={6} md={6}>
+              <div className={classes.imgContainer2} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+            <div className={classes.textContainer}>
+              <Typography component="p" variant="h4" className={classes.title2} color="textSecondary" gutterBottom>
+                I'm Abraham and I have a Bachelor of Science in Electronics Engineering. I mainly focus on software because is what I like the most and I consider myself a fullstack developer but I really like UX/UI. 
+              </Typography>
+              <Typography component="p" variant="h4" className={classes.title2} color="textSecondary" gutterBottom>
+                The current stack that I like is Postgresql, Express.js, React.js, Node.js.
+              </Typography>
+              <div className={classes.imgContainer}>
+              </div>
             </div>
-          </div>
+            </Grid>
           </Grid>
-        </Grid>
+        </Fade>
       </div>
     </div>
   );
