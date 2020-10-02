@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     '& video': {
       width: '100%',
       height: '100%',
-      objectFit: 'unset',
+      objectFit: 'cover',
       borderRadius: 4,
       boxShadow: theme.shadows[3],
     }

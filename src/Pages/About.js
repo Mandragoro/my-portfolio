@@ -55,8 +55,11 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     padding: 56,
-    '@media (max-width: 400px)': {
+    '@media (max-width: 580px)': {
       marginTop: 80,
+    },
+    '@media (min-width: 600px) and (max-width: 700px)': {
+      marginTop: 50,
     },
     '@media (max-height: 840px)': {
       marginTop: 80,
