@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
   },
   skeleton: {
-    width: '80%', 
+    // width: '80%', 
     height:'100%',
     position: 'absolute',
     top: 0,

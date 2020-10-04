@@ -56,9 +56,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexWrap: 'wrap',
-    '& div': {
+    '& > div': {
       width: 150,
-      height: 350,
+      height: 300,
+      marginBottom: 50,
+      overflow: 'hidden',
+      position: 'relative',
     },
   },
   cmsImagesContainer:{
@@ -69,9 +72,13 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& div': {
       width: 400,
-      height: 350,
+      height: 260,
+      overflow: 'hidden',
+      position: 'relative',
+      marginBottom: 50,
       '@media (max-width: 500px)': {
-        height: 250,
+        height: 180,
+        width: '100%',
       },
     },
   },
@@ -133,13 +140,21 @@ export default function IconButtons() {
       <br />
 
       <div className={classes.imagesContainer}>
-        {useLazyLoadImage(client)}
-        {useLazyLoadImage(products)}
-        {useLazyLoadImage(checkout)}
-        {useLazyLoadImage(order)}
+        <div>
+          {useLazyLoadImage(client)}
+        </div>
+        <div>
+          {useLazyLoadImage(products)}
+        </div>
+        <div>
+          {useLazyLoadImage(checkout)}
+        </div>
+        <div>
+          {useLazyLoadImage(order)}
+        </div>
       </div>
 
-      <Separator />
+      <br />
 
       <Typography component="p" variant="h3" className={classes.title2} color="textSecondary" gutterBottom>
         CMS
@@ -152,14 +167,24 @@ export default function IconButtons() {
       <br />
 
       <div className={classes.cmsImagesContainer}>
-        {useLazyLoadImage(cmsAdd)}
-        {useLazyLoadImage(cmsCatfrom)}
-        {useLazyLoadImage(cmsDash)}
-        {useLazyLoadImage(cmsOrders)}
-        {useLazyLoadImage(cmsProducts)}
+        <div>
+          {useLazyLoadImage(cmsAdd)}
+        </div>
+        <div>
+          {useLazyLoadImage(cmsCatfrom)}
+        </div>
+        <div>
+          {useLazyLoadImage(cmsDash)}
+        </div>
+        <div>
+          {useLazyLoadImage(cmsOrders)}
+        </div>
+        <div>
+          {useLazyLoadImage(cmsProducts)}
+        </div>
       </div>
 
-      <Separator />
+      <br />
 
       <Typography component="p" variant="h3" className={classes.title2} color="textSecondary" gutterBottom>
         Database
@@ -168,7 +193,7 @@ export default function IconButtons() {
         The database is built using Postgresql, and is managed with a Node.js server with GraphQL schemas that deal with connections and data.
       </Typography>
 
-      <Separator />
+      <br />
 
       <Typography component="p" variant="h3" className={classes.title2} color="textSecondary" gutterBottom>
         Server
