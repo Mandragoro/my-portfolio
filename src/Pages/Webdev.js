@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
 import cabana from '../img/cabana-both-op3.png';
+import crypto from '../img/crypto2-opt.png';
 import randomClassmate from '../img/rando-both-op2.png';
 import dorpau from '../img/dorpau-both-op3.png';
 import materialator from '../img/materialator-op2.png';
@@ -129,6 +130,42 @@ export default function Webdev() {
                       variant={"outlined"} 
                       className={classes.button} 
                       onClick={openLink} 
+                    >
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Fade>
+
+          <Fade in={true} timeout={800}>
+            <Grid container spacing={0} direction="row" justify="center" alignItems="stretch" className={classes.grid}>
+              <Grid item xs={12} md={5} className={classes.gridItem}>
+                <div className={classes.imgContainer}>
+                  {useLazyLoadImage(crypto)}
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={5} className={classes.gridItemText}>
+                <div className={classes.descContainer}>
+                  <Typography component="p" variant="h4" className={classes.title} color="textSecondary" gutterBottom>
+                    Crypto trading fees calculator
+                  </Typography>
+                  <Typography component="p" variant="body1" className={classes.desc} gutterBottom>
+                    Tool that lets you calculate Bybit fees when making a trade.
+                  </Typography>
+                  <div className={classes.buttonContainer}>
+                    <LinkRouter to={"/fees-calculator"} className={classes.button}>
+                      More Details
+                    </LinkRouter>
+                    <Button 
+                      rel="noopener" 
+                      color={"secondary"} 
+                      variant={"outlined"} 
+                      className={classes.button} 
+                      // onClick={openLink} 
+                      href={"https://crypto-fee-calculator.netlify.app/"} 
                     >
                       Live Demo
                     </Button>

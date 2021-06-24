@@ -5,6 +5,7 @@ import Webdev from './Pages/Webdev.js';
 import Androiddev from './Pages/Androiddev.js';
 import NotFound from './Pages/NotFound.js';
 import Cabana from './Pages/Cabana.js';
+import Crypto from './Pages/Crypto.js';
 import RandomClassMate from './Pages/RandomClassMate.js';
 import Dorpau from './Pages/Dorpau.js';
 import Materialator from './Pages/Materialator.js';
@@ -44,6 +45,12 @@ const routes = [
     name: 'Cabana',
     sidebar: () => <div>Cabana!</div>,
     main: () => <Cabana />
+  },
+  {
+    path: "/fees-calculator",
+    name: 'Calculator',
+    sidebar: () => <div>Calculator</div>,
+    main: () => <Crypto />
   },
   {
     path: "/random-classmate",
